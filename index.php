@@ -56,9 +56,9 @@
         $container_closed = $row["container_closed"];
         $timestamp = $row["timestamp"];
 
-        echo '<div class="container ' . ($container_closed == 1 ? "closed" : "open") . '">';
+        echo '<div class="container ' . ($container_closed == 'false' ? "closed" : "open") . '">';
         echo '<h3>Container Status:</h3>';
-        echo '<p>' . ($container_closed == 1 ? "BOX IS CLOSED" : "BOX IS OPEN") . '</p>';
+        echo '<p>' . ($container_closed == 'false' ? "BOX IS CLOSED" : "BOX IS OPEN") . '</p>';
         echo '<h3>Gas Reading:</h3>';
         echo '<p class="' . ($gas_reading < 1000 ? "unsafe" : "safe") . '">' . $gas_reading . '</p>';
         echo '<h3>Last Updated:</h3>';
