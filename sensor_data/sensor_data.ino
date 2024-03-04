@@ -32,7 +32,7 @@ void setup() {
 void loop() {
   unsigned long currentMillis = millis();  // Get current time
   float gasValue = analogRead(gasPin);
-  int containerClosed = checkContainerClosed();
+  float containerClosed = checkContainerClosed();
   Serial.println(containerClosed);
   if (WiFi.status() == WL_CONNECTED) {
       sendData(gasValue, containerClosed); // Pass current time as timestamp
@@ -70,7 +70,7 @@ int checkContainerClosed() {
   delay(1000);
 }
 
-void sendData(float gasValue, int containerClosed) {
+void sendData(float gasValue, float containerClosed) {
   Serial.println("Sending data to server...");
   Serial.print("Gas Reading: ");
   Serial.println(gasValue);
@@ -85,7 +85,7 @@ void sendData(float gasValue, int containerClosed) {
     checkContainer = "true";
   }
   Serial.print("Container Closed: ");
-  Serial.println(containerClosed ? "Yes" : "No");
+  Serial.println(checkContainer);
 
   HTTPClient http;
   http.begin(client, serverName);
