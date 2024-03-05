@@ -64,7 +64,7 @@
         echo '<h3>Gas Reading:</h3>';
         echo '<p class="' . ($gas_reading < 1000 ? "unsafe" : "safe") . '">' . $gas_reading . '</p>';
         echo '<h3>Load:</h3>';
-        echo '<p>' . $Wload . ' kg</p>';
+        echo '<p>' . $Wload . ' gms</p>';
         echo '<h3>Last Updated:</h3>';
         echo '<p>' . $timestamp . '</p>';
         echo '</div>';
