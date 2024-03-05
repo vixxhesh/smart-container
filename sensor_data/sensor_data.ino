@@ -90,7 +90,7 @@ void sendData(float gasValue, float containerClosed, float Wload) {
   Serial.print("Load (gms): ");
   Serial.println(Wload);
   const char *checkContainer;
-  if (containerClosed <10) {
+  if (containerClosed <15) {
     Serial.println("Container is closed");
     checkContainer = "close";
   } else {
