@@ -11,19 +11,30 @@
             background-color: #f0f0f0; /* Set background color */
             margin: 0;
         }
+        h2 {
+            color: #333; /* Dark gray color for headings */
+            align-items: center;
+            text-align: center;
+            text-decoration: solid;
+            padding: 20px;
+            margin: 20px;
+            font-size: 30px;
+            text-transform: capitalize;
+
+        }
         .container {
             width: 300px;
-            height: 200px;
+            height: 300px;
             border: 1px solid #ccc;
             padding: 20px;
             text-align: center;
         }
         .open {
-            background-color: #4CAF50;
+            background-color: rgba(244, 67, 54, 0.3); /* Light red and transparent */
             color: white;
         }
         .closed {
-            background-color: #f44336;
+            background-color: rgba(76, 175, 80, 0.3); /* Light green and transparent */
             color: white;
         }
         .safe {
@@ -32,10 +43,16 @@
         .unsafe {
             color: red;
         }
+        h3 {
+            color: #333; /* Dark gray color for headings */
+        }
+        p {
+            color: #666; /* Medium gray color for paragraph text */
+        }
     </style>
 </head>
 <body>
-    <h2>Smart Container Dashboard</h2>
+    <h2>Know the contents!</h2>
     <?php
     $servername = "localhost";
     $dbname = "id21696519_vessel";
@@ -57,8 +74,7 @@
         $Wload = $row["Wload"];
         $timestamp = $row["timestamp"];
 
-        // echo '<div class="container ' . ($container_closed == "false" ? "closed" : "open") . '">';
-
+        echo '<div class="container ' . ($container_closed == "close" ? "closed" : "open") . '">';
         echo '<h3>Container Status:</h3>';
         echo '<p>' . ($container_closed == "close" ? "BOX IS CLOSED" : "BOX IS OPEN") . '</p>';
         echo '<h3>Gas Reading:</h3>';
@@ -66,7 +82,7 @@
         echo '<h3>Load:</h3>';
         echo '<p>' . $Wload . ' gms</p>';
         echo '<h3>Last Updated:</h3>';
-        echo '<p>' . $timestamp . '</p>';
+        echo '<p>' . $timestamp . ' UTC</p>';
         echo '</div>';
     } else {
         echo "No data available.";
