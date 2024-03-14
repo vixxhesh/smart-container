@@ -1,10 +1,10 @@
 <?php
 $servername = "localhost";
-$dbname = "id21696519_vessel";
-$username = "id21696519_container";
-$password = "C0nt@iner";
-
-$api_key_value = "12345";
+$dbname = "";
+$username = "";
+$password = "";
+/* add your credentials */
+$api_key_value = "";
 $api_key = $gas_reading = $container_closed = $Wload = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
