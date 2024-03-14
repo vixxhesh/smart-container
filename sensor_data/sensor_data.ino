@@ -3,10 +3,10 @@
 #include <HX711.h> // Library for HX711 load cell amplifier
 
 WiFiClient client;
-const char* ssid = "BBVERMA";
-const char* password = "bb02061986";
-const char* serverName = "http://smartvessel.000webhostapp.com/post-data.php";
-String apiKeyValue = "12345";
+const char* ssid = "";
+const char* password = "";
+const char* serverName = "";
+String apiKeyValue = "";
 
 // Define the pins connected to the HX711 module
 #define DOUT_PIN D1  // Data output pin
