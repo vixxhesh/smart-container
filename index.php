@@ -54,10 +54,11 @@
 <body>
     <h2>Know the contents!</h2>
     <?php
+    /* Add your credentials */
     $servername = "localhost";
-    $dbname = "id21696519_vessel";
-    $username = "id21696519_container";
-    $password = "C0nt@iner";
+    $dbname = ""; 
+    $username = "";
+    $password = "";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     if ($conn->connect_error) {
